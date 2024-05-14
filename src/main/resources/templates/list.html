@@ -25,8 +25,10 @@
 </head>
 <body>
 	<div class="container">
-		<h1 class="my-4">News List</h1>
-		<h5><a th:href="@{/}">Back to main menu</a></h5>
+		<h1 class="my-4 text-center">News List</h1>
+		<hr>
+		<h5><a th:href="@{/}" class="btn btn-primary">Back to main menu</a></h5>
+		<h2>CATEGORY WISE NEWS</h2>
 		<div th:each="news : ${newsList}" class="news-item">
 			<img th:src="@{${news.imageUrl}}" alt="News Image">
 			<div class="news-content">

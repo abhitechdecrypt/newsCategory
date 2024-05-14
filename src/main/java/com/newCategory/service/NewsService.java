@@ -20,6 +20,7 @@ public class NewsService {
 
 	public void saveNews(News news) {
 		news.setId(UUID.randomUUID().toString());
+		news.setImageUrl("/images/image10.jpeg");
 		newsRepository.save(news);
 	}
 
