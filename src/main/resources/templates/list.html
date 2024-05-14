@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>News List</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+.news-item {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.news-item img {
+	width: 15rem;
+	height: 148px;
+	object-fit: cover;
+	margin-right: 24px;
+}
+
+.news-item .news-content {
+	flex-grow: 1;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<h1 class="my-4">News List</h1>
+		<h5><a th:href="@{/}">Back to main menu</a></h5>
+		<div th:each="news : ${newsList}" class="news-item">
+			<img th:src="@{${news.imageUrl}}" alt="News Image">
+			<div class="news-content">
+				<h5 th:text="${news.category}"></h5>
+				<p th:text="${news.description}"></p>
+				<a th:href="@{/viewNews/{id}(id=${news.id})}" class="btn btn-secondary">View</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

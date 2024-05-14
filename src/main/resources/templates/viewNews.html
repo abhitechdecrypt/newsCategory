@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View News</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4" th:text="${news.category}"></h1>
+        <img th:src="@{${news.imageUrl}}" alt="News Image">
+        <p class="mt-4" th:text="${news.description}"></p>
+        <a th:href="@{/list}" class="btn btn-primary mt-4">Back to News List</a>
+    </div>
+</body>
+</html>
